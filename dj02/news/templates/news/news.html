@@ -1,0 +1,38 @@
+
+{%  extends 'main/layoute.html'%}
+
+    {% block title %}
+
+        <title>Страница с описанием фильмов</title>
+
+    {% endblock %}
+
+    {% block content %}
+
+        <h1> Страница с описанием фильмов </h1>
+<div class="card-body">
+                        <h5 class="card-title">Фильм фильм фильм</h5>
+                        <ul class="list-group list-group-flush">
+                                 <li class="list-group-item"><a href="{% url 'add_news'%}"
+                                              class="nav-link">Добавить описание фильма</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+        {% if news%}
+                {% for new in news%}
+                    <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title"> {{new.title}}</h3>
+                                <h4 class="card-after"> {{new.after}}</h4>
+                                <p class="card-text"> {{new.short_description}}</p>
+                                <p class="card-text"> {{new.text}}</p>
+                                <h5 class="card-data"> {{new.pab_data}}</h5>
+                            </div>
+
+                     </div>
+                {% endfor %}
+            {% else %}
+                <h3> Описаний фильмов еще нет </h3>
+        {% endif%}
+    {% endblock %}
