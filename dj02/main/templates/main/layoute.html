@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+    {% block title %}
+
+    {% endblock %}
+
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <aside class="col-md-3">
+                <div class="card">
+                    <img src="{% static 'main/img/фильм.jpg' %}" class="card-img-top" alt="Фильм фильм фильм">
+                    <div class="card-body">
+                        <h5 class="card-title">Фильм фильм фильм</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="{% url 'home'%}" class="nav-link">Главная страница</a></li>
+
+                            <li class="list-group-item"><a href="{% url 'news'%}" class="nav-link">Страница с описанием фильмов</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <main class="col-md-9">
+                <div class="content">
+                    {% block content %}
+                    <!-- Ваш контент будет вставлен сюда -->
+                    {% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Подключение Bootstrap JS и зависимости -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
