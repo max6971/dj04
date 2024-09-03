@@ -1,0 +1,39 @@
+
+{%  extends 'main/layoute.html'%}
+
+  {% block content %}
+      <div class="container mt-5">
+        <h1 class="text-center mb-4">Добавить описание фильма</h1>
+        <div class="card p-4 shadow-sm">
+            <h2 class="text-center mb-4">Форма для добавления описания фильма</h2>
+            <form method="post">
+                {% csrf_token %}.
+                <div class="form-group">
+
+                    {{form.title}}
+                </div>
+                <div class="form-group">
+
+                    {{form.after}}
+                </div>
+                <div class="form-group">
+
+                    {{form.short_description}}
+                </div>
+                <div class="form-group">
+
+                    {{form.text}}
+                </div>
+                <div class="form-group">
+
+                    {{form.pab_data}}
+                </div>
+                <div class="form-group">
+                    <input type="time" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Добавить фильм</button>
+            </form>
+        </div>
+    </div>>
+{% endblock %}
+
